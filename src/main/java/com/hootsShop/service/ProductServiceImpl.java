@@ -10,6 +10,7 @@ import com.hootsShop.entity.Product;
 @Service
 public class ProductServiceImpl implements ProductService {
 	private static List<Product> products = new ArrayList<Product>();
+	private static Integer productId = 8;
 	
 	static {
 		products.add(new Product(1, "Xiaomi Trimmer", "It is a trimmer", 2, "trimmer1.jpg", 12.00, 1, 1));
@@ -42,6 +43,14 @@ public class ProductServiceImpl implements ProductService {
 		}
 		
 		return matchedProducts;
+	}
+
+	@Override
+	public void addProduct(Product newProduct) {
+		newProduct.setId(productId);
+		productId++;
+		
+		products.add(newProduct);
 	}
 
 }

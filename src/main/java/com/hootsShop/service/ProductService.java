@@ -11,4 +11,6 @@ public interface ProductService {
 	public Product getProduct(Integer productId);
 
 	public List<Product> searchProduct(String searchString);
+
+	public void addProduct(Product newProduct);
 }
