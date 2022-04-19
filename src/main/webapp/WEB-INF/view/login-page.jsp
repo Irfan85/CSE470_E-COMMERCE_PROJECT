@@ -17,22 +17,26 @@
 <body class="text-center">
 
     <main class="form-signin">
-        <form action="${pageContext.request.contextPath}">
-            <img class="mb-4" src="images/logo-green.png" alt="Hoot's Shop logo" width="100" height="auto">
+        <form action="${pageContext.request.contextPath}/login/verifyUser">
+            <img class="mb-4" src="${pageContext.request.contextPath}/resources/images/logo-green.png" alt="Hoot's Shop logo" width="100" height="auto">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
                 <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
                 <label for="floatingPassword">Password</label>
             </div>
-
-            <button class="w-100 btn btn-lg btn-success" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2022 Hoot's Shop inc.</p>
+            <button class="w-100 btn btn-lg btn-success" type="submit">Sign in</button> 
         </form>
+    	
+    	<br/><br/><br/><br/>
+    	<h2 class="h3 mb-3 fw-normal">Don't have an account?</h2>
+		<button class="w-100 btn btn-lg btn-outline-success" onclick="location.href='${pageContext.request.contextPath}/showRegistrationForm'">Register</button>
+    	
+    	<p class="mt-5 mb-3 text-muted">&copy; 2022 Hoot's Shop inc.</p>
     </main>
 
 

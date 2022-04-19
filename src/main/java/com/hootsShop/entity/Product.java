@@ -19,7 +19,6 @@ public class Product {
 	private Integer newFlag;
 	private Integer stock;
 	private Integer warrantyDuration;
-	private Integer usedFlag;
 	private Integer usageDuration;
 	
 	public Product() {
@@ -34,13 +33,15 @@ public class Product {
 		this.price = price;
 	}
 	
-	public Product(Integer id, String name, String description, Integer categoryId, String imagePath, double price) {
+	public Product(Integer id, String name, String description, Integer categoryId, String imagePath, double price, Integer newFlag, Integer sellerId) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.categoryId = categoryId;
 		this.imagePath = imagePath;
 		this.price = price;
+		this.newFlag = newFlag;
+		this.sellerId = sellerId;
 	}
 
 	public Integer getId() {
@@ -131,14 +132,6 @@ public class Product {
 		this.warrantyDuration = warrantyDuration;
 	}
 
-	public Integer getUsedFlag() {
-		return usedFlag;
-	}
-
-	public void setUsedFlag(Integer usedFlag) {
-		this.usedFlag = usedFlag;
-	}
-
 	public Integer getUsageDuration() {
 		return usageDuration;
 	}
@@ -152,7 +145,7 @@ public class Product {
 		return "Product [id=" + id + ", name=" + name + ", description=" + description + ", categoryId=" + categoryId
 				+ ", imagePath=" + imagePath + ", price=" + price + ", discountRate=" + discountRate + ", sellerId="
 				+ sellerId + ", newFlag=" + newFlag + ", stock=" + stock + ", warrantyDuration=" + warrantyDuration
-				+ ", usedFlag=" + usedFlag + ", usageDuration=" + usageDuration + "]";
+				+ ", usageDuration=" + usageDuration + "]";
 	}
 	
 }

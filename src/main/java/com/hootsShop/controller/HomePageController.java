@@ -10,12 +10,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hootsShop.entity.Product;
 import com.hootsShop.service.ProductService;
+import com.hootsShop.service.UserService;
 
 @Controller
 public class HomePageController {
 	
 	@Autowired
 	private ProductService productService;
+	
+	@Autowired
+	private UserService userService;
 	
 	@RequestMapping("/")
 	public String showHomePage(@RequestParam(required = false) Integer category, Model model) {
@@ -29,17 +33,8 @@ public class HomePageController {
 		
 		model.addAttribute("homePageCategory", category);
 		model.addAttribute("productList", productList);
+		model.addAttribute("currentUser", userService.getCurrentUser());
 		
 		return "home-page";
-	}
-	
-	@RequestMapping("/search")
-	public String showSearchPage() {
-		return "search-page";
-	}
-	
-	@RequestMapping("/login")
-	public String showLoginPage() {
-		return "login-page";
 	}
 }

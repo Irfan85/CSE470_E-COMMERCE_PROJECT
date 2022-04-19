@@ -15,6 +15,13 @@ public class User {
 	public User() {
 		// No-arg constructor
 	}
+	
+	public User(Integer id, String name, String email, String password) {
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.password = password;
+	}
 
 	public Integer getId() {
 		return id;
@@ -62,6 +69,12 @@ public class User {
 
 	public void setPhoneNumber(Integer phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", address="
+				+ address + ", phoneNumber=" + phoneNumber + "]";
 	}
 	
 }
