@@ -58,13 +58,19 @@
 										<p class="badge bg-warning text-dark fs-4 m-1">Used</p>
 									</c:when>
 								</c:choose>
+								
+								<c:choose>
+									<c:when test="${product.stock > 0}">
+										<p class="badge bg-success fs-4 m-1">In Stock</p>
+									</c:when>
+									<c:otherwise>
+										<p class="badge bg-danger fs-4 m-1">Out of Stock</p>
+									</c:otherwise>
+								</c:choose>
 
-								<!-- 								<p class="badge bg-success fs-4 m-1">In Stock</p> -->
-								<!-- 								<p class="badge bg-danger fs-4 m-1">Out of Stock</p> -->
 							</div>
 
-							<p class="card-text my-product-desc-seller-name">Seller:
-								User-A</p>
+							<p class="card-text my-product-desc-seller-name">Seller: ${sellerName}</p>
 
 							<p class="fs-1">Price: $${product.price}</p>
 

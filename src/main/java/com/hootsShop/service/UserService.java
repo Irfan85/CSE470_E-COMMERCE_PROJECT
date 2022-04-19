@@ -11,4 +11,6 @@ public interface UserService {
 	public User getCurrentUser();
 
 	public void addUser(User newUser);
+
+	public String getUsernameById(Integer sellerId);
 }

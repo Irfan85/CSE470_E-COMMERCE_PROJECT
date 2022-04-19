@@ -45,4 +45,15 @@ public class UserServiceImpl implements UserService {
 		users.add(newUser);
 	}
 
+	@Override
+	public String getUsernameById(Integer sellerId) {
+		for(User user : users) {
+			if(user.getId().equals(sellerId)) {
+				return user.getName();
+			}
+		}
+			
+		return null;
+	}
+
 }

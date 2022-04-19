@@ -32,6 +32,7 @@ public class ProductDescriptionPageController {
 		Product product = productService.getProduct(productId);
 		
 		model.addAttribute("product", product);
+		model.addAttribute("sellerName", userService.getUsernameById(product.getSellerId()));
 		model.addAttribute("currentUser", userService.getCurrentUser());
 
 		return "product-description-page";
