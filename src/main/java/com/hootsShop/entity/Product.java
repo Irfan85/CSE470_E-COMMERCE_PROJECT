@@ -13,8 +13,8 @@ public class Product {
 	private String description;
 	private Integer categoryId;
 	private String imagePath;
-	private double price;
-	private double discountRate;
+	private Double price;
+	private Double discountRate;
 	private Integer sellerId;
 	private Integer newFlag;
 	private Integer stock;
@@ -25,7 +25,7 @@ public class Product {
 		// No-arg constructor
 	}
 
-	public Product(String name, String description, Integer categoryId, String imagePath, double price) {
+	public Product(String name, String description, Integer categoryId, String imagePath, Double price) {
 		this.name = name;
 		this.description = description;
 		this.categoryId = categoryId;
@@ -33,7 +33,7 @@ public class Product {
 		this.price = price;
 	}
 	
-	public Product(Integer id, String name, String description, Integer categoryId, String imagePath, double price, Integer newFlag, Integer sellerId) {
+	public Product(Integer id, String name, String description, Integer categoryId, String imagePath, Double price, Integer newFlag, Integer sellerId) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
@@ -84,19 +84,19 @@ public class Product {
 		this.imagePath = imagePath;
 	}
 
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
-	public double getDiscountRate() {
+	public Double getDiscountRate() {
 		return discountRate;
 	}
 
-	public void setDiscountRate(double discountRate) {
+	public void setDiscountRate(Double discountRate) {
 		this.discountRate = discountRate;
 	}
 

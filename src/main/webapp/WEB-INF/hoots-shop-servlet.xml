@@ -65,6 +65,12 @@
 	
 	<!-- Add support for web resources. "**" means recursively search sub-directories -->
 	<mvc:resources location="/resources/" mapping="/resources/**" />
+	
+	<!-- Configure multipart file upload. In non-spring webapps, this configuration is done is web.xml -->
+	<!-- Ref: https://stackoverflow.com/questions/37922973/spring-mvc-file-upload-unable-to-process-parts-as-no-multi-part-configuration -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	<property name="maxUploadSize" value="10000000"/>
+	</bean>
 </beans>
 
 
