@@ -47,19 +47,19 @@
 					<!-- NOTE: Comments are NOT allowed inside "choose" tag -->
 					<c:choose>
 					
-						<c:when test="${homePageCategory == 0}">
+						<c:when test="${(homePageCategory == 0) && (product.discountRate > 0.0)}">
 							<%@ include file="product-grid-item.jsp" %>
 						</c:when>
 						
-						<c:when test="${(homePageCategory == 1) && (product.categoryId == 1)}">
+						<c:when test="${(homePageCategory == 1) && (product.categoryId == 1) && (product.discountRate > 0.0)}">
 							<%@ include file="product-grid-item.jsp" %>
 						</c:when>
 						
-						<c:when test="${(homePageCategory == 2) && (product.categoryId == 2)}">
+						<c:when test="${(homePageCategory == 2) && (product.categoryId == 2) && (product.discountRate > 0.0)}">
 							<%@ include file="product-grid-item.jsp" %>
 						</c:when>
 						
-						<c:when test="${(homePageCategory == 3) && (product.categoryId == 3)}">
+						<c:when test="${(homePageCategory == 3) && (product.categoryId == 3) && (product.discountRate > 0.0)}">
 							<%@ include file="product-grid-item.jsp" %>
 						</c:when>
 						

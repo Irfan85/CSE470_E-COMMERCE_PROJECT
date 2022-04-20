@@ -15,7 +15,7 @@
 			<div class="card-body">
 				<h5 class="card-title">${product.name}</h5>
 				<p class="card-text">
-					$${product.price} <s>$${product.price + 5}</s>
+					$${product.price - ((product.discountRate/100) * product.price)} <s>$${product.price}</s>
 				</p>
 			</div>
 			<div class="card-footer bg-transparent border-top-0">
@@ -24,7 +24,7 @@
 					<c:when test="${product.newFlag == 1}">
 						<span class="badge bg-info text-dark">New</span>
 					</c:when>
-					<c:when test="${product.newFlag == 2}">
+					<c:when test="${product.newFlag == 0}">
 						<span class="badge bg-warning text-dark">Used</span>
 					</c:when>
 				</c:choose>

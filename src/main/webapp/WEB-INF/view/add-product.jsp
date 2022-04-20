@@ -77,7 +77,7 @@
 							</div>
 							<div class="form-check">
 								<form:radiobutton class="form-check-input" id="new"
-									path="newFlag" value="1" />
+									path="newFlag" value="0" />
 								<label class="form-check-label" for="used">Used</label>
 							</div>
 						</div>

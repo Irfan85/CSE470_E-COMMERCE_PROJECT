@@ -108,7 +108,7 @@
 									<!-- Products will be added dynamically -->
 									<c:forEach var="product" items="${matchedProducts}">
 										
-										<c:if test="${product.newFlag == 2}">
+										<c:if test="${product.newFlag == 0}">
 											<%@ include file="product-grid-item.jsp"%>
 										</c:if>
 										

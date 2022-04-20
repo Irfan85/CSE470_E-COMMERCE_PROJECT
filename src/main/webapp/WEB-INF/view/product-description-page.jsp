@@ -54,7 +54,7 @@
 									<c:when test="${product.newFlag == 1}">
 										<p class="badge bg-info text-dark fs-4 m-1">New</p>
 									</c:when>
-									<c:when test="${product.newFlag == 2}">
+									<c:when test="${product.newFlag == 0}">
 										<p class="badge bg-warning text-dark fs-4 m-1">Used</p>
 									</c:when>
 								</c:choose>
@@ -72,21 +72,21 @@
 
 							<p class="card-text my-product-desc-seller-name">Seller: ${sellerName}</p>
 
-							<p class="fs-1">Price: $${product.price}</p>
+							<p class="fs-1">Price: $${product.price - ((product.discountRate/100) * product.price)} <s>$${product.price}</s></p>
 
 							<form id="cartForm" action="${pageContext.request.contextPath}/addToCart">
 								<div class="d-flex aligh-items-center">
 									<label for="quantity"><span class="fs-3 m-1">Quantity:</span></label>
 									<input class="border-3 rounded border-success" type="number"
 										id="quantity" name="quantity" aria-label="quantity" min="1"
-										max="100">
+										max="${product.stock}" value="1"/>
 								</div>
 
 								<input type="hidden" name="productId" value="${product.id}" />
 
 								<div
 									class="card-body d-flex align-items-right justify-content-end">
-									<button id="addToCartBtn" class="btn btn-success btn-lg" type="submit">Add to Cart</button>
+									<button id="addToCartBtn" class="btn btn-success btn-lg" type="submit" <c:if test="${product.stock == 0}">disabled="disabled"</c:if>>Add to Cart</button>
 								</div>
 							</form>
 
@@ -106,6 +106,23 @@
 					</div>
 				</div>
 			</div>
+			
+			<!-- Product Specification -->
+			<div
+				class="row border-bottom border-success my-section-heading-layout">
+				<h1 class="text-success my-section-heading">Product Specification</h1>
+			</div>
+			
+			<c:choose>
+				<c:when test="${product.newFlag == 1}">
+					<p class="text-success fs-4">Warranty: ${product.warrantyDuration} month(s)</p>
+				</c:when>
+				<c:otherwise>
+					<p class="text-success fs-4">Usage Duration: ${product.usageDuration} day(s)</p>
+				</c:otherwise>
+			</c:choose>
+			
+			<p class="text-success fs-4">Stock: ${product.stock} unit(s)</p>	
 
 			<!-- Procuct description -->
 			<div
