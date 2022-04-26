@@ -1,26 +1,38 @@
 package com.hootsShop.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-//@Entity
+@Entity
+@Table(name = "user")
 public class User {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Integer id;
+	
+	@Column(name = "name")
 	private String name;
+	
+	@Column(name = "email")
 	private String email;
+	
+	@Column(name = "password")
 	private String password;
+	
+	@Column(name = "address")
 	private String address;
+	
+	@Column(name = "phone_number")
 	private Integer phoneNumber;
 	
 	public User() {
 		// No-arg constructor
-	}
-	
-	public User(Integer id, String name, String email, String password) {
-		this.id = id;
-		this.name = name;
-		this.email = email;
-		this.password = password;
 	}
 
 	public Integer getId() {

@@ -1,47 +1,56 @@
 package com.hootsShop.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import org.springframework.stereotype.Component;
-
-//@Entity
-@Component
+@Entity
+@Table(name = "product")
 public class Product {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Integer id;
-	private String name;
+	
+	@Column(name = "title")
+	private String title;
+	
+	@Column(name = "description")
 	private String description;
+	
+	@Column(name = "category_id")
 	private Integer categoryId;
+	
+	@Column(name = "image_path")
 	private String imagePath;
+	
+	@Column(name = "price")
 	private Double price;
+	
+	@Column(name = "discount_rate")
 	private Double discountRate;
+	
+	@Column(name = "seller_id")
 	private Integer sellerId;
+	
+	@Column(name = "new_flag")
 	private Integer newFlag;
+	
+	@Column(name = "stock")
 	private Integer stock;
+	
+	@Column(name = "warranty_duration")
 	private Integer warrantyDuration;
+	
+	@Column(name = "usage_duration")
 	private Integer usageDuration;
 	
 	public Product() {
 		// No-arg constructor
-	}
-
-	public Product(String name, String description, Integer categoryId, String imagePath, Double price) {
-		this.name = name;
-		this.description = description;
-		this.categoryId = categoryId;
-		this.imagePath = imagePath;
-		this.price = price;
-	}
-	
-	public Product(Integer id, String name, String description, Integer categoryId, String imagePath, Double price, Integer newFlag, Integer sellerId) {
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.categoryId = categoryId;
-		this.imagePath = imagePath;
-		this.price = price;
-		this.newFlag = newFlag;
-		this.sellerId = sellerId;
 	}
 
 	public Integer getId() {
@@ -53,11 +62,11 @@ public class Product {
 	}
 
 	public String getName() {
-		return name;
+		return title;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.title = name;
 	}
 
 	public String getDescription() {
@@ -142,7 +151,7 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", description=" + description + ", categoryId=" + categoryId
+		return "Product [id=" + id + ", name=" + title + ", description=" + description + ", categoryId=" + categoryId
 				+ ", imagePath=" + imagePath + ", price=" + price + ", discountRate=" + discountRate + ", sellerId="
 				+ sellerId + ", newFlag=" + newFlag + ", stock=" + stock + ", warrantyDuration=" + warrantyDuration
 				+ ", usageDuration=" + usageDuration + "]";

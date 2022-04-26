@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hootsShop.service.CartService;
 import com.hootsShop.service.CartServiceImpl.CartWrapper;
+import com.hootsShop.service.ProductService;
 import com.hootsShop.service.UserService;
 
 @Controller
@@ -23,6 +24,9 @@ public class CartPageController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private ProductService productService;
 	
 	@GetMapping("/showCartPage")
 	public String showCartPage(Model model) {
@@ -35,7 +39,7 @@ public class CartPageController {
 			carts = cartService.getUserCarts(userService.getCurrentUser().getId());
 			
 			for (CartWrapper cart : carts) {
-				double price = cart.getProduct().getPrice();
+				double price = productService.getDiscountedPrice(cart.getProduct().getPrice(), cart.getProduct().getDiscountRate());
 				int quantity = cart.getCart().getQuantity();
 				
 				totalPrice += (price * quantity);

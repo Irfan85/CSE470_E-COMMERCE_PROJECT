@@ -31,7 +31,7 @@
 	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
         <property name="driverClass" value="org.mariadb.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mariadb://localhost:3306/hoots-shop-database?useSSL=false&amp;serverTimezone=UTC" />
+        <property name="jdbcUrl" value="jdbc:mariadb://localhost:3306/hoots_shop_database?useSSL=false&amp;serverTimezone=UTC" />
         <property name="user" value="root" />
         <property name="password" value="" /> 
 

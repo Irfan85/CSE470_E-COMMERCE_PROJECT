@@ -26,7 +26,7 @@
 						aria-label="quantity_input" class="form-control form-control-sm" />
 				</div>
 				<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-					<h5 class="mb-0">${cart.product.price}</h5>
+					<h5 class="mb-0">$${cart.product.price - ((cart.product.discountRate/100) * cart.product.price)}</h5>
 				</div>
 				<div class="col-md-1 col-lg-1 col-xl-1 text-end">
 					<button class="btn btn-outline-danger" title="remove_from_cart_btn" onclick="onClickDelete(${cart.cart.id})">

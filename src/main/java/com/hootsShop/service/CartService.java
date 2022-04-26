@@ -7,7 +7,8 @@ import com.hootsShop.service.CartServiceImpl.CartWrapper;
 
 public interface CartService {
 	
-	public Cart createNewCart(Integer userid, Integer productId, Integer quantity);
+	public Integer createNewCart(Integer userid, Integer productId, Integer quantity);
+	public Cart getCartById(Integer cartId);
 	public void removeCart(Integer cartId);
 	public List<CartWrapper> getUserCarts(Integer userId);
 
